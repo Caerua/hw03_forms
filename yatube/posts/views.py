@@ -1,13 +1,10 @@
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 
-from . forms import PostForm
-
-
+from .forms import PostForm
 from .models import Group, Post, User
 
-from django.core.paginator import Paginator
-
-from django.contrib.auth.decorators import login_required
 
 NUMBER_OF_POSTS = 10
 
@@ -76,7 +73,8 @@ def create_post(request):
 
     context = {
         'form': form,
-        'is_edit': False}
+        'is_edit': False,
+    } 
 
     return render(request, 'posts/create_post.html', context)
 

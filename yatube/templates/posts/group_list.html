@@ -12,8 +12,8 @@
     <hr>
     {% include 'posts/includes/article.html' %}
     <br>
-    {% empty %}
-      <p>Нет Постов</p>
+  {% empty %}
+    <p>Нет Постов</p>
   {% endfor %}
   {% include 'posts/includes/paginator.html' %}
 {% endblock %}
