@@ -51,4 +51,3 @@ class Post(models.Model):
     def __str__(self):
         _text_limit = 15
         return self.text[:_text_limit]
-
