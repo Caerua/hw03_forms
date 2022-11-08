@@ -29,16 +29,17 @@
       {% endif %}    
       </div>
       <div class="card-body ">        
-        <form method="post" action="">
+        <form method="post">
           {% csrf_token %}  
-          {% for field in form %}
-          <div class="form-group row my-3 p-3">
-            <label for="id_text">
-              {{ field.label }}                 
-              <span class="required text-danger" >*</span>                  
-            </label>
-              {{ field|addclass:"form-control" }}
-          </div> 
+            {% for field in form %}
+            <div class="form-group row my-3 p-3">
+              <label for="id_text">
+                {{ field.label }}                 
+                <span class="required text-danger" >*</span>                  
+              </label>
+                {{ field|addclass:"form-control" }}
+                {{ field.help_text }}
+            </div> 
           {% endfor %}
           <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary">
